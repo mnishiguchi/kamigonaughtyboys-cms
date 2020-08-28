@@ -1,0 +1,28 @@
+{{/*
+  Scope: schedule data for a given team
+  */}}
+
+<div class="overflow-auto mv2">
+  <table border="1" style="min-width:600px;width:100%">
+    <thead>
+      <tr>
+        <th class="pa3 pr3 bb b--black-20">チーム</th>
+        <th class="pa3 pr3 bb b--black-20">日　付</th>
+        <th class="pa3 pr3 bb b--black-20">時　間</th>
+        <th class="pa3 pr3 bb b--black-20">内　容</th>
+        <th class="pa3 pr3 bb b--black-20">場　所</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{ range . }}
+      <tr>
+        <td class="pa3 pr3 bb b--black-20">{{ .team }}</td>
+        <td class="pa3 pr3 bb b--black-20">{{ .date }}</td>
+        <td class="pa3 pr3 bb b--black-20">{{ .time }}</td>
+        <td class="pa3 pr3 bb b--black-20">{{ .description }}</td>
+        <td class="pa3 pr3 bb b--black-20">{{ .location }}</td>
+      </tr>
+      {{ end }}
+    </tbody>
+  </table>
+</div>

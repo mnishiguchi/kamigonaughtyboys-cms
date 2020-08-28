@@ -1,0 +1,55 @@
+{{ define "main" }}
+
+  {{ partial "jumbotron" (dict "imageUrl" .Params.image "title" .Title "subtitle" .Params.subtitle) }}
+
+  <marquee class="navy h2 f3 mt2">{{ .Params.banner }}</marquee>
+
+  {{ with .Params.blurb }}
+  <div class="bg-grey-1 pv4">
+    <div class="ph3 center mw7">
+      {{ if .heading }}<h2 class="f2">{{.heading}}</h2>{{ end }}
+      <p class=" mw-100">{{.text}}</p>
+      {{ if .gm_image }}
+        <figure>
+          <img src="{{ .gm_image }}" alt="代表 {{ .gm_name }}" />
+          <div class="pt1">
+            <p class="gray">
+              代表　{{ .gm_name }}
+            </p>
+          </div>
+        </figure>
+      {{ end }}
+    </div>
+  </div>
+  {{ end }}
+
+
+  {{ if gt (len .Params.schedule) 0 }}
+  <div class="ph3 center mw7">
+    {{ partial "schedule-table" .Params.schedule }}
+  </div>
+
+  {{ end }}
+
+  {{ with .Params.info }}
+  <div class="bg-grey-1 pv4">
+    <div class="ph3 mw7 center">
+      <div class="flex-l mhn2-l">
+        <div class="w-40-l ph2-l">
+          <h2 class="f2 b lh-title mb2">{{.heading}}</h2>
+          <p>{{.text}}</p>
+        </div>
+
+        {{ if .image }}
+        <div class="w-60-l ph2-l">
+          <img src="{{.image}}" alt="{{.heading}}" class="mb3">
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+  {{ end }}
+
+  {{ partial "blog" . }}
+
+{{ end }}

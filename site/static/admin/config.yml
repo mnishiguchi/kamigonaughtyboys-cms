@@ -2,62 +2,121 @@ backend:
   name: git-gateway
   repo: mnishiguchi/kamigonaughtyboys-cms
 
-media_folder: "site/static/img" # Folder where user uploaded files should go
-public_folder: "img"
+media_folder: 'site/static/img' # Folder where user uploaded files should go
+public_folder: img
 
 collections: # A list of collections the CMS should be able to edit
-  - name: "post" # Used in routes, ie.: /admin/collections/:slug/edit
-    label: "Post" # Used in the UI, ie.: "New Post"
-    folder: "site/content/post" # The path to the folder where the documents are stored
+  - name: post # Used in routes, ie.: /admin/collections/:slug/edit
+    label: Post # Used in the UI, ie.: "New Post"
+    folder: 'site/content/post' # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     fields: # The fields each document in this collection have
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Intro Blurb", name: "description", widget: "text"}
-      - {label: "Image", name: "image", widget: "image", required: false}
-      - {label: "Body", name: "body", widget: "markdown"}
-  - name: "team" # Used in routes, ie.: /admin/collections/:slug/edit
-    label: "Team" # Used in the UI, ie.: "New Team"
-    folder: "site/content/team" # The path to the folder where the documents are stored
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
+      - { label: 'Description', name: 'description', widget: 'text' }
+      - { label: 'Image', name: 'image', widget: 'image', required: false }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
+      - {
+          label: 'Photo Gallery',
+          name: 'photo_gallery',
+          widget: 'object',
+          fields: [{ label: Image, name: image, widget: image }],
+        }
+  - name: 'team' # Used in routes, ie.: /admin/collections/:slug/edit
+    label: 'Team' # Used in the UI, ie.: "New Team"
+    folder: 'site/content/team' # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     fields: # The fields each document in this collection have
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Intro Blurb", name: "description", widget: "text"}
-      - {label: "Image", name: "image", widget: "image", required: false}
-      - {label: "Body", name: "body", widget: "markdown"}
-  - name: "pages"
-    label: "Pages"
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
+      - { label: 'Description', name: 'description', widget: 'text' }
+      - { label: 'Image', name: 'image', widget: 'image', required: false }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
+      - {
+          label: 'Photo Gallery',
+          name: 'photo_gallery',
+          widget: 'object',
+          fields: [{ label: Image, name: image, widget: image }],
+        }
+      - {
+          label: 'Team Instructors',
+          name: 'team_instructors',
+          widget: 'list',
+          fields:
+            [
+              { label: role, name: role, widget: string },
+              { label: number, name: number, widget: string },
+              { label: name, name: name, widget: string },
+            ],
+        }
+      - {
+          label: 'Team Players',
+          name: 'team_players',
+          widget: 'list',
+          fields:
+            [
+              { label: number, name: number, widget: string },
+              { label: name, name: name, widget: string },
+              { label: school, name: school, widget: string },
+              { label: throws, name: throws, widget: string },
+              { label: bats, name: bats, widget: string },
+            ],
+        }
+  - name: pages
+    label: Pages
     files:
-      - file: "site/content/_index.md"
-        label: "Home Page"
-        name: "home"
+      - file: 'site/content/_index.md'
+        label: Home Page
+        name: home
         fields:
-          - {label: Title, name: title, widget: string}
-          - {label: Banner, name: banner, widget: string}
-          - {label: Image, name: image, widget: image}
-          - {label: Blurb, name: blurb, widget: object, fields: [
-              {label: Heading, name: heading, widget: string},
-              {label: Text, name: text, widget: text},
-              {label: Image, name: gm_image, widget: image},
-              {label: Text, name: gm_name, widget: string}]}
-          - {label: Schedule, name: products, widget: list, fields: [
-              {label: team, name: team, widget: string},
-              {label: date, name: date, widget: string},
-              {label: time, name: time, widget: string},
-              {label: description, name: description, widget: text},
-              {label: location, name: location, widget: string}]}
-          - {label: Info, name: info, widget: object, fields: [
-              {label: Image, name: image, widget: image},
-              {label: Heading, name: heading, widget: string},
-              {label: Text, name: text, widget: text}]}
-      - file: "site/content/activities.md"
-        label: "activities"
-        name: "activities"
+          - { label: Banner, name: banner, widget: string }
+          - { label: Image, name: image, widget: image }
+          - {
+              label: Blurb,
+              name: blurb,
+              widget: object,
+              fields:
+                [
+                  { label: Heading, name: heading, widget: string },
+                  { label: Text, name: text, widget: text },
+                  { label: General Manager Image, name: gm_image, widget: image },
+                  { label: General Manager Text, name: gm_name, widget: string },
+                ],
+            }
+          - {
+              label: Schedule,
+              name: schedule,
+              widget: list,
+              fields:
+                [
+                  { label: team, name: team, widget: string },
+                  { label: date, name: date, widget: string },
+                  { label: time, name: time, widget: string },
+                  { label: description, name: description, widget: text },
+                  { label: location_text, name: location_text, widget: string },
+                  { label: location_url, name: location_url, widget: string, required: false },
+                ],
+            }
+          - {
+              label: Info,
+              name: info,
+              widget: object,
+              fields:
+                [
+                  { label: Image, name: image, widget: image },
+                  { label: Heading, name: heading, widget: string },
+                  { label: Text, name: text, widget: text },
+                  { label: Link Text, name: link_text, widget: string, required: false },
+                  { label: Link URL, name: link_url, widget: string, required: false },
+                ],
+            }
+      - file: 'site/content/activities.md'
+        label: Activities Page
+        name: activities
         fields:
-          - {label: Body, name: body, widget: text}
-      - file: "site/content/links.md"
-        label: "links"
-        name: "links"
+          - { label: Body, name: body, widget: markdown }
+      - file: 'site/content/links.md'
+        label: Links Page
+        name: links
         fields:
-          - {label: Body, name: body, widget: text}
+          - { label: Body, name: body, widget: markdown }

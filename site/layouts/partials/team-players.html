@@ -1,0 +1,41 @@
+{{/*
+  Requied frontmatter param: team_players
+
+  Examples
+
+      # In the frontmatter
+      team_players:
+        - role: manager
+          number: 30
+          name: Mr Bean
+
+      # in the layout
+      {{ partial "team-players.html" .  }}
+  */}}
+
+{{ with $.Page.Params.team_players }}
+<div class="overflow-auto mv3">
+  <table class="f6 w-100 mw8 center">
+    <thead>
+      <tr>
+        <th class="fw6 pa2 bb b--black-20 tl">背番号</th>
+        <th class="fw6 pa2 bb b--black-20 tl">名　前</th>
+        <th class="fw6 pa2 bb b--black-20 tl">小学校</th>
+        <th class="fw6 pa2 bb b--black-20 tl">投</th>
+        <th class="fw6 pa2 bb b--black-20 tl">打</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{ range . }}
+      <tr>
+        <td class="f6 pa2 bb b--black-20">{{ .number }}</td>
+        <td class="f6 pa2 bb b--black-20">{{ .name }}</td>
+        <td class="f6 pa2 bb b--black-20">{{ .school }}</td>
+        <td class="f6 pa2 bb b--black-20">{{ .throws }}</td>
+        <td class="f6 pa2 bb b--black-20">{{ .bats }}</td>
+      </tr>
+      {{ end }}
+    </tbody>
+  </table>
+</div>
+{{ end }}

@@ -3,24 +3,30 @@
   */}}
 
 <div class="overflow-auto mv2">
-  <table border="1" style="min-width:600px;width:100%">
+  <table border="1" style="width:100%">
     <thead>
       <tr>
-        <th class="pa3 pr3 bb b--black-20">チーム</th>
-        <th class="pa3 pr3 bb b--black-20">日　付</th>
-        <th class="pa3 pr3 bb b--black-20">時　間</th>
-        <th class="pa3 pr3 bb b--black-20">内　容</th>
-        <th class="pa3 pr3 bb b--black-20">場　所</th>
+        <th class="fw6 pa2 bb b--black-20 tl" style="min-width:100px">チーム</th>
+        <th class="fw6 pa2 bb b--black-20 tl" style="min-width:200px">日　付</th>
+        <th class="fw6 pa2 bb b--black-20 tl" style="min-width:200px">時　間</th>
+        <th class="fw6 pa2 bb b--black-20 tl" style="min-width:200px">内　容</th>
+        <th class="fw6 pa2 bb b--black-20 tl" style="min-width:200px">場　所</th>
       </tr>
     </thead>
     <tbody>
       {{ range . }}
       <tr>
-        <td class="pa3 pr3 bb b--black-20">{{ .team }}</td>
-        <td class="pa3 pr3 bb b--black-20">{{ .date }}</td>
-        <td class="pa3 pr3 bb b--black-20">{{ .time }}</td>
-        <td class="pa3 pr3 bb b--black-20">{{ .description }}</td>
-        <td class="pa3 pr3 bb b--black-20">{{ .location }}</td>
+        <td class="f6 pa2 bb b--black-20">{{ .team }}</td>
+        <td class="f6 pa2 bb b--black-20">{{ .date }}</td>
+        <td class="f6 pa2 bb b--black-20">{{ .time }}</td>
+        <td class="f6 pa2 bb b--black-20">{{ .description }}</td>
+        <td class="f6 pa2 bb b--black-20">
+          {{ if .location_url }}
+            <a href=" {{ .location_url }}"> {{ .location_text }}</a>
+          {{ else }}
+            {{ .location_text }}
+          {{ end }}
+        </td>
       </tr>
       {{ end }}
     </tbody>

@@ -1,4 +1,5 @@
 {{ define "main" }}
+
   <div class="mw6 center ph3 pv4">
     <h1 class="f2 lh-title b mb3">{{.Title}}</h1>
 
@@ -6,6 +7,12 @@
       <p>{{ .Description }}</p>
       {{ if .Params.image }}<img src="{{ .Params.image }}" alt="{{ .Title }}" />{{ end }}
       {{ .Content }}
+
+      {{ partial "team-instructors" . }}
+
+      {{ partial "team-players" . }}
+
+      {{ partial "photo-gallery.html" . }}
     </div>
   </div>
 {{ end }}

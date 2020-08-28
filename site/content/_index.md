@@ -7,33 +7,40 @@ blurb:
   gm_name: 加藤松男
   gm_image: /img/mr-kato.jpg
 schedule:
-  - team: a
+  - team: A
     date: 7/4（土）
     time: 8：00～13：00
     description: 通常練習
-    location: 上郷南グランド
-  - team: a
+    location_text: 上郷南グランド
+    location_url:
+  - team: A
     date: 7/5（日）
     time: 10：20試合開始
     description: ゲオ杯
-    location: 船見グランドE面
-  - team: a
+    location_text: 船見グランドE面
+    location_url:
+  - team: A
     date: 7/5（日）
     time: 13：00～16：00
     description: 通常練習
-    location: 上郷南グランド
-  - team: j
+    location_text: 上郷南グランド
+    location_url:
+  - team: Jr
     date: 7/4（土）
     time: 13：00～16：00
     description: 通常練習
-    location: 上郷南グランド
-  - team: j
+    location_text: 上郷南グランド
+    location_url:
+  - team: Jr
     date: 7/5（日）
     time: 13：00～16：00
     description: 通常練習
-    location: 上郷南グランド
+    location_text: 上郷南グランド
+    location_url:
 info:
   heading: 仲間を募集中
   text: 野球はとても楽しいスポーツです。随時、仲間を募集してます。お待ちしております。
   image: /img/recruitment.jpg
+  link_text: お申し込み・お問い合わせ
+  link_url: #
 ---

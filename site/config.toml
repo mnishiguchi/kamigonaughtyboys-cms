@@ -1,7 +1,15 @@
 baseurl = "/"
 title = "上郷ノーティボーイズ"
 
+languageCode = "ja"
+DefaultContentLanguage = "ja"
+
 # RSS, categories and tags disabled for an easy start
 # See configuration options for more details:
 # https://gohugo.io/getting-started/configuration/#toml-configuration
 disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
+
+[params]
+# Specify sections to pull recent posts from.
+mainSections = ["post"]
+recent_posts_number = 5

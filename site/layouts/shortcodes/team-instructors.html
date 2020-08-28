@@ -1,0 +1,35 @@
+{{/*
+  Requied frontmatter param: team_instructors
+
+  Examples
+
+      # In the frontmatter
+      team_instructors:
+        - role: manager
+          number: 30
+          name: Mr Bean
+
+      # in the markdown body
+      {{< team-instructors >}}
+  */}}
+
+<div class="overflow-auto mv3">
+  <table class="f6 w-100 mw8 center">
+    <thead>
+      <tr>
+        <th class="fw6 pa2 bb b--black-20 tl">役割</th>
+        <th class="fw6 pa2 bb b--black-20 tl">背番号</th>
+        <th class="fw6 pa2 bb b--black-20 tl">氏名</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{ range $.Page.Params.team_instructors }}
+      <tr>
+        <td class="f6 pa2 bb b--black-20">{{ .role }}</td>
+        <td class="f6 pa2 bb b--black-20">{{ .number }}</td>
+        <td class="f6 pa2 bb b--black-20">{{ .name }}</td>
+      </tr>
+      {{ end }}
+    </tbody>
+  </table>
+</div>

@@ -25,9 +25,9 @@
     {{ range . }}
       <h2>{{ .title }}</h2>
       <p>{{ .description }}</p>
-      <div class="flex flex-wrap justify-around">
+      <div class="flex flex-wrap justify-between">
         {{ range .images }}
-          <div class="w-100 w-40-ns pa1">
+          <div class="w-100 w-50-ns pa1-ns">
             <img src="{{ . }}">
           </div>
         {{ end }}
@@ -36,7 +36,7 @@
   {{ else }}
     <div class="flex flex-wrap justify-around">
       {{ range . }}
-        <div class="w-100 w-40-ns pa1">
+        <div class="w-100 w-50-ns pa1-ns">
           <img src="{{ . }}">
         </div>
       {{ end }}

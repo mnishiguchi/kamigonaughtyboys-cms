@@ -2,7 +2,7 @@
 
 {{ partial "jumbotron" (dict "imageUrl" .Params.image "title" .Title "subtitle" .Params.subtitle) }}
 
-<marquee class="navy h2 f3 mt2">{{ .Params.banner }}</marquee>
+<marquee class="navy h2 f4 mt2">{{ .Params.banner }}</marquee>
 
 {{ with .Params.blurb }}
 <div class="bg-grey-1 pv4">
@@ -23,17 +23,18 @@
 </div>
 {{ end }}
 
-
 {{ with .Params.schedule }}
-<div class="ph3 center mv3">
-  <h2 class="f3 b lh-title">予定表</h2>
-  {{ partial "schedule-table" . }}
+<div class="pv4">
+  <div class="ph3 center mw7">
+    <h2 class="f3 b lh-title">予定表</h2>
+    {{ partial "schedule-table" . }}
+  </div>
 </div>
 {{ end }}
 
 {{ with .Params.info }}
 <div class="bg-grey-1 pv4">
-  <div class="ph3 center">
+  <div class="ph3 center mw7">
     <div class="flex-l mhn2-l">
       <div class="w-40-l ph2-l">
         <h2 class="f2 lh-title mb2">{{.heading}}</h2>

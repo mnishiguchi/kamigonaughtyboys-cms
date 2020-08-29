@@ -1,42 +1,53 @@
+# https://www.netlifycms.org/docs/configuration-options/
 backend:
   name: git-gateway
   repo: mnishiguchi/kamigonaughtyboys-cms
 
-media_folder: 'site/static/img' # Folder where user uploaded files should go
-public_folder: img
+media_folder: 'site/static/images/uploads' # Folder where user uploaded files should go
+public_folder: '/images/uploads' # Folder where the files uploaded by the media library will be accessed
+
+site_url: https://kamigonaughtyboys-cms.netlify.app
+logo_url: https://kamigonaughtyboys-cms.netlify.app/images/logo-32x32.png
+locale: 'ja'
+show_preview_links: false
 
 collections: # A list of collections the CMS should be able to edit
-  - name: post # Used in routes, ie.: /admin/collections/:slug/edit
+  - name: blog # Used in routes, ie.: /admin/collections/:slug/edit
     label: Post # Used in the UI, ie.: "New Post"
     folder: 'site/content/post' # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
+    slug: '{{year}}-{{month}}-{{day}}'
     fields: # The fields each document in this collection have
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Publish Date', name: 'date', widget: 'datetime' }
-      - { label: 'Description', name: 'description', widget: 'text' }
+      - { label: 'Description', name: 'description', widget: 'text', required: false }
       - { label: 'Image', name: 'image', widget: 'image', required: false }
-      - { label: 'Body', name: 'body', widget: 'markdown' }
+      - { label: 'Body', name: 'body', widget: 'markdown', required: false }
       - {
           label: 'Photo Gallery',
           name: 'photo_gallery',
-          widget: 'object',
+          widget: 'list',
           fields: [{ label: Image, name: image, widget: image }],
+          required: false,
         }
   - name: 'team' # Used in routes, ie.: /admin/collections/:slug/edit
     label: 'Team' # Used in the UI, ie.: "New Team"
     folder: 'site/content/team' # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
+    slug: '{{fields.slug}}'
     fields: # The fields each document in this collection have
-      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Team Name', name: 'title', widget: 'string' }
+      - { label: 'Slug', name: 'slug', widget: 'string' }
       - { label: 'Publish Date', name: 'date', widget: 'datetime' }
-      - { label: 'Description', name: 'description', widget: 'text' }
+      - { label: 'Description', name: 'description', widget: 'text', required: false }
       - { label: 'Image', name: 'image', widget: 'image', required: false }
-      - { label: 'Body', name: 'body', widget: 'markdown' }
+      - { label: 'Body', name: 'body', widget: 'markdown', required: false }
       - {
           label: 'Photo Gallery',
           name: 'photo_gallery',
-          widget: 'object',
+          widget: 'list',
           fields: [{ label: Image, name: image, widget: image }],
+          required: false,
         }
       - {
           label: 'Team Instructors',
@@ -44,10 +55,11 @@ collections: # A list of collections the CMS should be able to edit
           widget: 'list',
           fields:
             [
-              { label: role, name: role, widget: string },
-              { label: number, name: number, widget: string },
               { label: name, name: name, widget: string },
+              { label: role, name: role, widget: string, required: false },
+              { label: number, name: number, widget: string, required: false },
             ],
+          required: false,
         }
       - {
           label: 'Team Players',
@@ -55,12 +67,13 @@ collections: # A list of collections the CMS should be able to edit
           widget: 'list',
           fields:
             [
-              { label: number, name: number, widget: string },
               { label: name, name: name, widget: string },
-              { label: school, name: school, widget: string },
-              { label: throws, name: throws, widget: string },
-              { label: bats, name: bats, widget: string },
+              { label: number, name: number, widget: string, required: false },
+              { label: school, name: school, widget: string, required: false },
+              { label: throws, name: throws, widget: string, required: false },
+              { label: bats, name: bats, widget: string, required: false },
             ],
+          required: false,
         }
   - name: pages
     label: Pages
@@ -69,8 +82,8 @@ collections: # A list of collections the CMS should be able to edit
         label: Home Page
         name: home
         fields:
-          - { label: Banner, name: banner, widget: string }
           - { label: Image, name: image, widget: image }
+          - { label: Banner, name: banner, widget: string }
           - {
               label: Blurb,
               name: blurb,
@@ -90,9 +103,9 @@ collections: # A list of collections the CMS should be able to edit
               fields:
                 [
                   { label: team, name: team, widget: string },
-                  { label: date, name: date, widget: string },
+                  { label: date, name: date, widget: date, format: 'YYYY-MM-DD' },
                   { label: time, name: time, widget: string },
-                  { label: description, name: description, widget: text },
+                  { label: description, name: description, widget: string },
                   { label: location_text, name: location_text, widget: string },
                   { label: location_url, name: location_url, widget: string, required: false },
                 ],
@@ -115,8 +128,12 @@ collections: # A list of collections the CMS should be able to edit
         name: activities
         fields:
           - { label: Body, name: body, widget: markdown }
+        editor:
+          preview: false
       - file: 'site/content/links.md'
         label: Links Page
         name: links
         fields:
           - { label: Body, name: body, widget: markdown }
+        editor:
+          preview: false

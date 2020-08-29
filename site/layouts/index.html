@@ -7,7 +7,7 @@
 {{ with .Params.blurb }}
 <div class="bg-grey-1 pv4">
   <div class="ph3 center mw7">
-    {{ if .heading }}<h2 class="f2">{{.heading}}</h2>{{ end }}
+    {{ if .heading }}<h1 class="f2">{{.heading}}</h1>{{ end }}
     <p class=" mw-100">{{.text}}</p>
     {{ if .gm_image }}
     <figure>
@@ -24,19 +24,19 @@
 {{ end }}
 
 
-{{ if gt (len .Params.schedule) 0 }}
-<div class="ph3 center mw7">
-  {{ partial "schedule-table" .Params.schedule }}
+{{ with .Params.schedule }}
+<div class="ph3 center mv3">
+  <h2 class="f3 b lh-title">予定表</h2>
+  {{ partial "schedule-table" . }}
 </div>
-
 {{ end }}
 
 {{ with .Params.info }}
 <div class="bg-grey-1 pv4">
-  <div class="ph3 mw7 center">
+  <div class="ph3 center">
     <div class="flex-l mhn2-l">
       <div class="w-40-l ph2-l">
-        <h2 class="f2 b lh-title mb2">{{.heading}}</h2>
+        <h2 class="f2 lh-title mb2">{{.heading}}</h2>
         <p>{{.text}}</p>
       </div>
       {{ if .image }}<img src="{{.image}}" alt="{{.heading}}" class="mb3">{{ end }}

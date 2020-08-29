@@ -10,6 +10,8 @@ DefaultContentLanguage = "ja"
 disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
 
 [params]
+description = "愛知県豊田市南部にある少年軟式野球チーム・上郷ノーティボーイズです。"
+
 # Specify sections to pull recent posts from.
 mainSections = ["post"]
 recent_posts_number = 5

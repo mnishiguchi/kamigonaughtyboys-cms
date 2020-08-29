@@ -15,3 +15,26 @@ description = "愛知県豊田市南部にある少年軟式野球チーム・�
 # Specify sections to pull recent posts from.
 mainSections = ["post"]
 recent_posts_number = 5
+
+# https://gohugo.io/content-management/menus/
+[menu]
+  [[menu.main]]
+    identifier = "team"
+    name = "チーム"
+    url = "/team/"
+    weight = 1
+  [[menu.main]]
+    identifier = "post"
+    name = "記事"
+    url = "/post/"
+    weight = 2
+  [[menu.main]]
+    identifier = "activities"
+    name = "活動"
+    url = "/activities/"
+    weight = 3
+  [[menu.main]]
+    identifier = "links"
+    name = "リンク"
+    url = "/links/"
+    weight = 9

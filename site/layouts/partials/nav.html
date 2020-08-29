@@ -7,10 +7,27 @@
   </a>
 
   <!-- Primary Nav -->
+  {{ if .Site.Menus.main }}
   <ul class="flex b grey-3">
-    <li><a href="/team" class="w3 pv3 tc no-underline db">チーム</a></li>
-    <li><a href="/post" class="w3 pv3 tc no-underline db">記事</a></li>
-    <li><a href="/activities" class="w3 pv3 tc no-underline db">活動</a></li>
-    <li><a href="/links" class="w3 pv3 tc no-underline db">リンク</a></li>
+    {{ range .Site.Menus.main }}
+    <li>
+      <a class="w3 pv3 tc no-underline db" href="{{ .URL }}" aria-current={{ cond (eq $.Permalink .URL) "true" "false" }}>
+        {{ .Name }}
+      </a>
+    </li>
+    {{ end }}
   </ul>
+  {{ end }}
 </nav>
+
+<!--
+{{/* Uncomment to see current menu config */}}
+{{ if not (eq (getenv "HUGO_ENV") "production") }}
+  <pre>
+    {{ range .Site.Menus.main }}
+      {{ . }}
+    {{ end }}
+    Current: {{ $.Permalink }}
+  </pre>
+{{ end }}
+-->

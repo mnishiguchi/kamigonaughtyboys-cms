@@ -5,14 +5,14 @@
 
     <div class="cms mw6">
       <p>{{ .Description }}</p>
+
       {{ if .Params.image }}<img src="{{ .Params.image }}" alt="{{ .Title }}" />{{ end }}
+
       {{ .Content }}
 
       {{ partial "team-instructors" . }}
 
       {{ partial "team-players" . }}
-
-      {{ partial "photo-gallery.html" . }}
     </div>
   </div>
 {{ end }}

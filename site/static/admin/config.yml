@@ -23,13 +23,6 @@ collections: # A list of collections the CMS should be able to edit
       - { label: 'Description', name: 'description', widget: 'text', required: false }
       - { label: 'Image', name: 'image', widget: 'image', required: false }
       - { label: 'Body', name: 'body', widget: 'markdown', required: false }
-      - {
-          label: 'Photo Gallery',
-          name: 'photo_gallery',
-          widget: 'list',
-          fields: [{ label: Image, name: image, widget: image }],
-          required: false,
-        }
   - name: 'team' # Used in routes, ie.: /admin/collections/:slug/edit
     label: 'Team' # Used in the UI, ie.: "New Team"
     folder: 'site/content/team' # The path to the folder where the documents are stored
@@ -42,13 +35,6 @@ collections: # A list of collections the CMS should be able to edit
       - { label: 'Description', name: 'description', widget: 'text', required: false }
       - { label: 'Image', name: 'image', widget: 'image', required: false }
       - { label: 'Body', name: 'body', widget: 'markdown', required: false }
-      - {
-          label: 'Photo Gallery',
-          name: 'photo_gallery',
-          widget: 'list',
-          fields: [{ label: Image, name: image, widget: image }],
-          required: false,
-        }
       - {
           label: 'Team Instructors',
           name: 'team_instructors',

@@ -41,7 +41,7 @@ collections: # A list of collections the CMS should be able to edit
             [
               { label: name, name: name, widget: string },
               { label: role, name: role, widget: string, required: false },
-              { label: number, name: number, widget: string, required: false },
+              { label: number, name: number, widget: number, min: 0, required: false },
             ],
           required: false,
         }
@@ -52,10 +52,10 @@ collections: # A list of collections the CMS should be able to edit
           fields:
             [
               { label: name, name: name, widget: string },
-              { label: number, name: number, widget: string, required: false },
+              { label: number, name: number, widget: number, min: 0, required: false },
               { label: school, name: school, widget: string, required: false },
-              { label: throws, name: throws, widget: string, required: false },
-              { label: bats, name: bats, widget: string, required: false },
+              { label: throws, name: throws, widget: select, options: ["右", "左"], required: false },
+              { label: bats, name: bats, widget: select, options: ["右", "左"], required: false },
             ],
           required: false,
         }
@@ -119,12 +119,8 @@ collections: # A list of collections the CMS should be able to edit
         name: activities
         fields:
           - { label: Body, name: body, widget: markdown }
-        editor:
-          preview: false
       - file: 'site/content/links.md'
         label: Links Page
         name: links
         fields:
           - { label: Body, name: body, widget: markdown }
-        editor:
-          preview: false

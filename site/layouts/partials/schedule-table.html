@@ -17,7 +17,7 @@
       {{ range . }}
       <tr>
         <td class="f6 pa2 bb b--black-20">{{ .team }}</td>
-        <td class="f6 pa2 bb b--black-20">{{ .date }}</td>
+        <td class="f6 pa2 bb b--black-20">{{ partial "date.html" .date }}</td>
         <td class="f6 pa2 bb b--black-20">{{ .time }}</td>
         <td class="f6 pa2 bb b--black-20">{{ .description }}</td>
         <td class="f6 pa2 bb b--black-20">

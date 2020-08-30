@@ -89,7 +89,14 @@ collections: # A list of collections the CMS should be able to edit
               fields:
                 [
                   { label: team, name: team, widget: string },
-                  { label: date, name: date, widget: date, format: 'YYYY-MM-DD' },
+                  {
+                    label: date,
+                    name: date,
+                    widget: datetime,
+                    format: 'YYYY-MM-DD HH:mm:ss ZZ', # Needed to avoid the following error in the CMS preview: "Objects are not valid as a React child"
+                    dateFormat: true,
+                    timeFormat: false,
+                  },
                   { label: time, name: time, widget: string },
                   { label: description, name: description, widget: string },
                   { label: location_text, name: location_text, widget: string },

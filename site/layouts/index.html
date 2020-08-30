@@ -1,6 +1,8 @@
 {{ define "main" }}
 
-{{ partial "jumbotron" (dict "imageUrl" .Params.image "title" .Title "subtitle" .Params.subtitle) }}
+<div class="pv5 pv6-l ph3 bg-center cover"
+  style="background-image: url('{{.Params.image}}');min-height:70vh;max-height:500px">
+</div>
 
 <marquee class="navy h2 f4 mt2">{{ .Params.banner }}</marquee>
 

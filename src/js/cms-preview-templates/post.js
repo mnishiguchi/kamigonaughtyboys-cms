@@ -26,6 +26,8 @@ export default function PostPreview({ entry, widgetFor }) {
         <div className="cms mw6">
           <p>{entry.getIn(['data', 'description'])}</p>
 
+          <img src={entry.getIn(['data', 'image'])} alt=""/>
+
           {widgetFor('body')}
         </div>
       </div>

@@ -1,18 +1,21 @@
 {{ define "main" }}
-
   <div class="mw6 center ph3 pv4">
     <h1 class="f2 lh-title mb3">{{.Title}}</h1>
 
     <p class="grey-3">{{ partial "date.html" .Date }}</p>
 
-    <div class="cms mw6">
+    <div class="mw6">
       <p>{{ .Description }}</p>
 
       {{ if .Params.image }}
-        {{ partial "progressive-image.html" (dict "context" . "src" .Params.image "alt" .Title) }}
+        <figure class="mb3">
+          {{ partial "progressive-image.html" (dict "context" . "src" .Params.image "alt" .Title) }}
+        </figure>
       {{ end }}
 
-      {{ .Content }}
+      <div class="cms">
+        {{ .Content }}
+      </div>
     </div>
   </div>
 {{ end }}

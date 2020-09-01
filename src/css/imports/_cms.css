@@ -20,7 +20,7 @@
   }
 
   & h4 {
-    font-size: 1rem;;
+    font-size: 1rem;
   }
 
   & h5 {
@@ -39,10 +39,10 @@
 	/* Links */
 	& a {
 		color: var(--primary);
-		transition: var(--hover-transition);
+    transition: var(--hover-transition);
+    border: none;
 		&:hover {
-			background-color: var(--highlight);
-			color: var(--black);
+			color: var(--highlight);
 		}
 	}
 

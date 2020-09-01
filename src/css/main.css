@@ -23,7 +23,6 @@
  *
  */
 
-
 /* External Library Includes */
 @import './imports/_reset';
 
@@ -68,7 +67,6 @@
 @import './imports/_vertical-align';
 @import './imports/_states';
 @import './imports/_z-index';
-@import './imports/_styles';
 @import './imports/_buttons';
 @import './imports/_svg';
 @import './imports/_cms';
@@ -88,4 +86,18 @@
 
 main {
   min-height: 80vh;
+}
+
+/* Used in the navbar */
+.divider-grey {
+  box-shadow: inset 0 -4px 0 var(--grey-1);
+  /* Link hover states */
+  & a {
+    transition: var(--hover-transition);
+  }
+  & ul a:hover,
+  & ul a:focus,
+  & ul a[aria-current='true'] {
+    box-shadow: inset 0 -4px 0 var(--primary);
+  }
 }

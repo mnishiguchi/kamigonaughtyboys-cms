@@ -1,52 +1,52 @@
 {{ define "main" }}
 
 <div class="pv5 pv6-l ph3 bg-center cover"
-  style="background-image: url('{{.Params.image}}');min-height:70vh;max-height:500px">
+  style="background-image:url('{{.Params.image}}');background-color:#abc;min-height:70vh;max-height:500px">
 </div>
 
 <marquee class="navy h2 f4 mt2">{{ .Params.banner }}</marquee>
 
 {{ with .Params.blurb }}
-<div class="bg-grey-1 pv4">
-  <div class="ph3 center mw7">
-    {{ if .heading }}<h1 class="f2">{{.heading}}</h1>{{ end }}
-    <p class=" mw-100">{{.text}}</p>
-    {{ if .gm_image }}
-    <figure>
-      <img src="{{ .gm_image }}" alt="代表 {{ .gm_name }}" />
-      <div class="pt1">
-        <p class="gray">
-          代表　{{ .gm_name }}
-        </p>
-      </div>
-    </figure>
-    {{ end }}
+  <div class="bg-grey-1 pv4">
+    <div class="ph3 center mw7">
+      {{ if .heading }}<h1 class="f2">{{.heading}}</h1>{{ end }}
+      <p class=" mw-100">{{.text}}</p>
+      {{ if .gm_image }}
+        <figure>
+          <img src="{{ .gm_image }}" alt="代表 {{ .gm_name }}" />
+          <div class="pt1">
+            <p class="gray">
+              代表　{{ .gm_name }}
+            </p>
+          </div>
+        </figure>
+      {{ end }}
+    </div>
   </div>
-</div>
 {{ end }}
 
 {{ with .Params.schedule }}
-<div class="pv4">
-  <div class="ph3 center mw7">
-    <h2 class="f3 b lh-title">予定表</h2>
-    {{ partial "schedule-table" . }}
+  <div class="pv4">
+    <div class="ph3 center mw7">
+      <h2 class="f3 b lh-title">予定表</h2>
+      {{ partial "schedule-table" . }}
+    </div>
   </div>
-</div>
 {{ end }}
 
 {{ with .Params.info }}
-<div class="bg-grey-1 pv4">
-  <div class="ph3 center mw7">
-    <div class="flex-l mhn2-l">
-      <div class="w-40-l ph2-l">
-        <h2 class="f2 lh-title mb2">{{.heading}}</h2>
-        <p>{{.text}}</p>
+  <div class="bg-grey-1 pv4">
+    <div class="ph3 center mw7">
+      <div class="flex-l mhn2-l">
+        <div class="w-40-l ph2-l">
+          <h2 class="f2 lh-title mb2">{{.heading}}</h2>
+          <p>{{.text}}</p>
+        </div>
+        {{ if .image }}<img src="{{.image}}" alt="{{.heading}}" class="mb3">{{ end }}
       </div>
-      {{ if .image }}<img src="{{.image}}" alt="{{.heading}}" class="mb3">{{ end }}
+      {{ if .link_text }}<a href="{{ .link_url }}" class="btn raise">{{ .link_text }}</a>{{ end }}
     </div>
-    {{ if .link_text }}<a href="{{ .link_url }}" class="btn raise">{{ .link_text }}</a>{{ end }}
   </div>
-</div>
 {{ end }}
 
 {{ partial "blog" . }}

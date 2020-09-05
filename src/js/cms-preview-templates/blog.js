@@ -1,7 +1,7 @@
 import React from 'react';
 import format from 'date-fns/format';
 
-export default function PostPreview({ entry, widgetFor }) {
+export default function BlogPreview({ entry, widgetFor }) {
   const dateForSlug = format(entry.getIn(['data', 'date']), 'YYYY-MM-DD');
   const dateForDisplay = format(entry.getIn(['data', 'date']), 'ddd, MMM D, YYYY');
   const slug = `https://${window.parent.location.host}/post/${dateForSlug}`;

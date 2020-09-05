@@ -26,3 +26,5 @@ info:
   link_text: お申し込み・お問い合わせ
   link_url: null
 ---
+
+Ex ad quis pariatur officia ullamco non proident deserunt. Adipisicing excepteur mollit magna tempor. Nulla aute irure et adipisicing enim nulla ullamco ipsum velit fugiat. Ea cillum minim culpa incididunt. Aute est exercitation voluptate ex sunt aute in elit et anim qui ex dolor non.

@@ -2,7 +2,7 @@ import React from 'react';
 import format from 'date-fns/format';
 
 // A CMS template for the home layout.
-export default function HomePreview({ entry, getAsset }) {
+export default function HomePreview({ entry, getAsset, widgetFor }) {
   const image = getAsset(entry.getIn(['data', 'image']));
   const gmText = `代表 ${entry.getIn(['data', 'blurb', 'gm_name'])}`;
 
@@ -57,7 +57,7 @@ export default function HomePreview({ entry, getAsset }) {
         </div>
       </div>
 
-      <div className="bg-grey-1 pv4">
+      <div className="bg-highlight pv4">
         <div className="ph3 mw7 center">
           <div className="flex-l mhn2-l">
             <div className="w-40-l ph2-l">
@@ -76,6 +76,10 @@ export default function HomePreview({ entry, getAsset }) {
             {entry.getIn(['data', 'info', 'link_text'])}
           </a>
         </div>
+      </div>
+
+      <div className="bg-grey-1 pv4">
+        <div className="ph3 mw7 center cms">{widgetFor('body')}</div>
       </div>
     </>
   );

@@ -116,6 +116,7 @@ collections: # A list of collections the CMS should be able to edit
                   { label: Link URL, name: link_url, widget: string, required: false },
                 ],
             }
+          - { label: 'Body', name: 'body', widget: 'markdown', required: false }
       - file: 'site/content/activities.md'
         label: Activities Page
         name: activities

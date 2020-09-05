@@ -14,7 +14,7 @@ CMS.registerPreviewStyle(styles, { raw: true });
 CMS.registerPreviewTemplate('home', HomePreview);
 CMS.registerPreviewTemplate('blog', BlogPreview);
 CMS.registerPreviewTemplate('team', TeamPreview);
-CMS.registerPreviewTemplate('activities', SimplePreview);
+CMS.registerPreviewTemplate('about', SimplePreview);
 CMS.registerPreviewTemplate('links', SimplePreview);
 
 // https://www.netlifycms.org/docs/configuration-options/#locale

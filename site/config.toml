@@ -29,9 +29,9 @@ recent_posts_number = 5
     url = "/blog/"
     weight = 2
   [[menu.main]]
-    identifier = "activities"
+    identifier = "about"
     name = "活動"
-    url = "/activities/"
+    url = "/about/"
     weight = 3
   [[menu.main]]
     identifier = "links"

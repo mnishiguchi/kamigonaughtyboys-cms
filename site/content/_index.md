@@ -8,35 +8,17 @@ blurb:
   gm_image: /images/mr-kato.jpg
 schedule:
   - team: A
-    date: 2020-07-04 15:48:31 -0400
-    time: 8：00～13：00
-    description: 通常練習
-    location_text: 上郷南グランド
-    location_url: null
-  - team: A
-    date: 2020-07-05 15:48:31 -0400
-    time: 10：20試合開始
-    description: ゲオ杯
-    location_text: 船見グランドE面
-    location_url: null
-  - team: A
-    date: 2020-07-05 15:48:31 -0400
-    time: 13：00～16：00
-    description: 通常練習
-    location_text: 上郷南グランド
-    location_url: null
-  - team: Jr
-    date: 2020-07-04 15:48:31 -0400
-    time: 13：00～16：00
-    description: 通常練習
-    location_text: 上郷南グランド
-    location_url: null
-  - team: Jr
-    date: 2020-07-05 15:48:31 -0400
-    time: 13：00～16：00
-    description: 通常練習
-    location_text: 上郷南グランド
-    location_url: null
+    date: 2020-09-05 15:48:31 -0400
+    time: 9：00開始
+    description: 小幡旗大会３回戦　VS　大林ヤンキース
+    location_text: 柳川瀬児童球場
+    location_url: "https://www.google.com/search?q=%E6%9F%B3%E5%B7%9D%E7%80%AC%E5%85%90%E7%AB%A5%E7%90%83%E5%A0%B4"
+  - team: "Ｂ"
+    date: 2020-09-06 15:48:31 -0400
+    time: 13：20開始
+    description: "新人戦　VS　平山フレンダース"
+    location_text: 豊田市運動公園
+    location_url: "https://www.google.com/search?q=%E8%B1%8A%E7%94%B0%E5%B8%82%E9%81%8B%E5%8B%95%E5%85%AC%E5%9C%92"
 info:
   heading: 仲間を募集中
   text: 野球はとても楽しいスポーツです。随時、仲間を募集してます。お待ちしております。

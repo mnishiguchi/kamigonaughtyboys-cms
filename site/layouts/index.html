@@ -19,7 +19,7 @@
         <p class=" mw-100">{{.text}}</p>
         {{ if .gm_image }}
           <figure>
-            <img src="{{ .gm_image }}" alt="代表 {{ .gm_name }}" />
+            {{ partial "progressive-image.html" (dict "context" . "src" .gm_image "alt" .gm_name ) }}
             <div class="pt1">
               <p class="gray">
                 代表　{{ .gm_name }}
@@ -44,13 +44,15 @@
     <div class="bg-highlight pv4">
       <div class="ph3 center mw7">
         <div class="flex-l mhn2-l">
-          <div class="w-40-l ph2-l">
+          <div class="pr2">
             <h2 class="f2 lh-title mb2">{{.heading}}</h2>
             <p>{{.text}}</p>
           </div>
-          {{ if .image }}<img src="{{.image}}" alt="{{.heading}}" class="mb3">{{ end }}
+          {{ if .image }}
+            {{ partial "progressive-image.html" (dict "context" . "src" .image "alt" .heading ) }}
+          {{ end }}
         </div>
-        {{ if .link_text }}<a href="{{ .link_url }}" class="btn raise">{{ .link_text }}</a>{{ end }}
+        {{ if .link_text }}<a href="{{ .link_url }}" class="btn raise mt3">{{ .link_text }}</a>{{ end }}
       </div>
     </div>
   {{ end }}

@@ -1,6 +1,14 @@
 import React from 'react';
 import format from 'date-fns/format';
 
+const formatDate = (dataStr) =>
+  new Date(dataStr).toLocaleDateString('ja', {
+    weekday: 'short',
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+  });
+
 // A CMS template for the home layout.
 export default function HomePreview({ entry, getAsset, widgetFor }) {
   const image = getAsset(entry.getIn(['data', 'image']));
@@ -46,7 +54,7 @@ export default function HomePreview({ entry, getAsset, widgetFor }) {
               {(entry.getIn(['data', 'schedule']) || []).map((scheduleEntry, i) => (
                 <tr key={i}>
                   <td className="f6 pa2 bb b--black-20">{scheduleEntry.get('team')}</td>
-                  <td className="f6 pa2 bb b--black-20">{scheduleEntry.get('date')}</td>
+                  <td className="f6 pa2 bb b--black-20">{formatDate(scheduleEntry.get('date'))}</td>
                   <td className="f6 pa2 bb b--black-20">{scheduleEntry.get('time')}</td>
                   <td className="f6 pa2 bb b--black-20">{scheduleEntry.get('description')}</td>
                   <td className="f6 pa2 bb b--black-20">{scheduleEntry.get('location_text')}</td>

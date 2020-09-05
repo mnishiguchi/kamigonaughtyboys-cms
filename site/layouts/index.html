@@ -1,15 +1,16 @@
 {{ define "main" }}
 
 <main>
-  {{ if .Params.image }}
-    <div class="bg-center cover"
-      style="background-image:url('{{.Params.image}}');min-height:70vh;max-height:500px">
-    </div>
-  {{ else }}
-    <div style="background-color:#abc;min-height:70vh;max-height:500px"></div>
-  {{ end }}
-
-  <marquee class="navy h2 f4 mt2">{{ .Params.banner }}</marquee>
+  <div class="center mw7">
+    {{ if .Params.image }}
+      <div class="bg-center cover"
+        style="background-image:url('{{.Params.image}}');min-height:70vh;max-height:500px">
+      </div>
+    {{ else }}
+      <div style="background-color:#abc;min-height:70vh;max-height:500px"></div>
+    {{ end }}
+    <marquee class="navy h2 f4 mt2">{{ .Params.banner }}</marquee>
+  </div>
 
   {{ with .Params.blurb }}
     <div class="bg-grey-1 pv4">

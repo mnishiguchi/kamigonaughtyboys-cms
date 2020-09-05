@@ -69,7 +69,7 @@ collections: # A list of collections the CMS should be able to edit
         name: home
         fields:
           - { label: Image, name: image, widget: image }
-          - { label: Banner, name: banner, widget: string }
+          - { label: Banner, name: banner, widget: string, required: false }
           - {
               label: Blurb,
               name: blurb,
@@ -86,6 +86,7 @@ collections: # A list of collections the CMS should be able to edit
               label: Schedule,
               name: schedule,
               widget: list,
+              required: false,
               fields:
                 [
                   { label: team, name: team, widget: string },
@@ -107,6 +108,7 @@ collections: # A list of collections the CMS should be able to edit
               label: Info,
               name: info,
               widget: object,
+              required: false,
               fields:
                 [
                   { label: Image, name: image, widget: image },

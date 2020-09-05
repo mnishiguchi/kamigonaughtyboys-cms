@@ -13,8 +13,8 @@
 
 {{ if $original }}
   {{ $small := ($original.Resize "20x") }}
-  <a href="{{ $original.RelPermalink }}" class="progressive replace">
-    <img class="preview" src="{{ $small.RelPermalink }}" width="{{ $small.Width }}" height="{{ $small.Height }}">
+  <a class="progressive replace" href="{{ $original.RelPermalink }}">
+    <img class="preview" src="{{ $small.RelPermalink }}">
   </a>
 {{ else }}
   <img src="{{ .src }}" alt="{{ .alt }}">

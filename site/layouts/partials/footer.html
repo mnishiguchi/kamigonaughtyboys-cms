@@ -1,9 +1,7 @@
-<footer class="bg-black ph3 pv4 white">
+<footer class="bg-black ph3 pv4 mt4 white">
   <div class="mw7 center pt3">
     <a class="f5 fw4 hover-white no-underline white-70 pv2 ph3" href="{{ .Site.BaseURL }}">
       &copy; {{ with .Site.Copyright | default .Site.Title }} {{ . | safeHTML }} {{ now.Format "2006"}} {{ end }}
     </a>
   </div>
 </footer>
-
-<script src="/app.js"></script>

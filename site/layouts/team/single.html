@@ -1,19 +1,26 @@
 {{ define "main" }}
 
-<main class="mw6 center ph3 pv4">
-  <h1 class="f2 lh-title mb3">{{.Title}}</h1>
-
-  <div class="mw6">
-    <p>{{ .Description }}</p>
-
-    {{ if .Params.image }}
-      <figure class="mb3" style="min-height:300px">
+<main>
+  {{ if .Params.image }}
+    <div class="mw7 center">
+      <figure class="mv3-ns" style="min-height:200px">
         {{ partial "progressive-image.html" (dict "context" . "src" .Params.image "alt" .Title) }}
       </figure>
-    {{ end }}
+    </div>
+  {{ end }}
 
+  <div class="bg-grey-1 pv4">
+    <header class="mw7 center ph3">
+      <h1 class="f2 lh-title mb3">{{.Title}}</h1>
+      <p>{{ .Description }}</p>
+    </header>
+  </div>
+
+  <div class="mw7 center mv3 ph3">
     <div class="cms">{{ .Content }}</div>
+  </div>
 
+  <div class="mw7 center mv3 ph3">
     {{ partial "team-instructors" . }}
 
     {{ partial "team-players" . }}

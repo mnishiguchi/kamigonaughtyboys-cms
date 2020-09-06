@@ -1,4 +1,5 @@
 ---
+title: "上郷ノーティボーイズ"
 image: /images/home-jumbotron.jpg
 banner: ただいま新6年生～新1年生大募集中！！まずは体験からどうですか？お申し込み・お問い合わせはお気軽に！！
 blurb:

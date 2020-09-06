@@ -1,5 +1,11 @@
 <head>
-  <title>{{ block "title" . }}{{ with .Params.Title }}{{ . }} | {{ end }}{{ .Site.Title }}{{ end }}</title>
+  <title>
+    {{- if and .Params.Title (not (eq .Params.Title .Site.Title)) -}}
+      {{ .Params.Title }} | {{ .Site.Title }}
+    {{- else -}}
+      {{ .Site.Title }}
+    {{- end -}}
+  </title>
 
   {{ $stylesheet := .Site.Data.webpack.main }}
   {{ with $stylesheet.css }}
@@ -27,7 +33,7 @@
 	<link rel="manifest" href="/manifest.json">
 	<meta name="theme-color" content="#fff">
 
-  {{/* NOTE: These Hugo Internal Templates can be found starting at https://github.com/spf13/hugo/blob/master/tpl/tplimpl/template_embedded.go#L158 */}}
+  {{/* NOTE: These Hugo Internal Templates https://gohugo.io/templates/internal/ */}}
   {{- template "_internal/opengraph.html" . -}}
   {{- template "_internal/schema.html" . -}}
   {{- template "_internal/twitter_cards.html" . -}}

@@ -15,6 +15,12 @@ module.exports = {
     path: path.join(__dirname, "dist")
   },
 
+  resolve: {
+    alias: {
+      'tachyons': path.resolve(__dirname, './node_modules/tachyons'),
+    }
+  },
+
   module: {
     rules: [
       {
@@ -53,5 +59,5 @@ module.exports = {
       template: 'src/cms.html',
       inject: false,
     }),
-  ]
+  ],
 };

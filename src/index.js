@@ -1,6 +1,6 @@
 // JS Goes here - ES6 supported
 
-import './css/main.css';
+import './css/main.scss';
 
 // Format all the date in Japanese format.
 //

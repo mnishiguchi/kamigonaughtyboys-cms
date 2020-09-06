@@ -7,9 +7,9 @@
     <p>{{ .Description }}</p>
 
     {{ if .Params.image }}
-      <figure class="mb3">
+      <div class="mb3-ns">
         {{ partial "progressive-image.html" (dict "context" . "src" .Params.image "alt" .Title) }}
-      </figure>
+      </div>
     {{ end }}
 
     <div class="cms">{{ .Content }}</div>

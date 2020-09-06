@@ -18,12 +18,14 @@
 
 {{ $original := $headless_bundle.Resources.GetMatch (strings.TrimPrefix "/images/" .src) }}
 
-{{ if $original }}
-  {{ $cropped := $original.Fill "600x450 Gaussian Center" }}{{/* Aspect ratio 4:3 */}}
-  {{ $small := $cropped.Resize "20x" }}
-  <a class="progressive replace" href="{{ $cropped.RelPermalink }}">
-    <img class="preview" src="{{ $small.RelPermalink }}">
-  </a>
-{{ else }}
-  <img src="{{ .src }}" alt="{{ .alt }}">
-{{ end }}
+<picture class="mn-ProgressiveImage">
+  {{ if $original }}
+    {{ $cropped := $original.Fill "600x450 Gaussian Center" }}{{/* Aspect ratio 4:3 */}}
+    {{ $small := $cropped.Resize "20x" }}
+    <a class="progressive replace" href="{{ $cropped.RelPermalink }}">
+      <img class="preview" src="{{ $small.RelPermalink }}">
+    </a>
+  {{ else }}
+    <img src="{{ .src }}" alt="{{ .alt }}">
+  {{ end }}
+</picture>

@@ -3,9 +3,9 @@
 <main>
   {{ if .Params.image }}
     <div class="mw7 center">
-      <figure class="mb3-ns" style="min-height:200px">
+      <div class="mb3-ns">
         {{ partial "progressive-image.html" (dict "context" . "src" .Params.image "alt" .Title) }}
-      </figure>
+      </div>
     </div>
   {{ end }}
 

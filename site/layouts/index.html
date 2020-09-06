@@ -3,7 +3,6 @@
 <main>
   <div class="center mw7">
     {{ partial "progressive-image.html" (dict "context" . "src" .Params.image "alt" .Title) }}
-
     {{ with .Params.banner }}<marquee class="navy h2 f4 mt2">{{ . }}</marquee>{{ end }}
   </div>
 

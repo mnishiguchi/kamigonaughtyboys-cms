@@ -2,9 +2,8 @@
 
 <main>
   <div class="center mw7">
-    <div class="bg-center cover"
-      style="background-image:url('{{.Params.image}}');min-height:70vh;max-height:500px">
-    </div>
+    {{ partial "progressive-image.html" (dict "context" . "src" .Params.image "alt" .Title) }}
+
     {{ with .Params.banner }}<marquee class="navy h2 f4 mt2">{{ . }}</marquee>{{ end }}
   </div>
 
@@ -15,7 +14,7 @@
         <p class=" mw-100">{{.text}}</p>
         {{ if .gm_image }}
           <figure>
-            {{ partial "progressive-image.html" (dict "context" . "src" .gm_image "alt" .gm_name ) }}
+            <img src="{{ .gm_image }}" alt="{{ .gm_name }}">
             <div class="pt1">
               <p class="gray">
                 代表　{{ .gm_name }}
@@ -44,9 +43,7 @@
             <h2 class="f2 lh-title mb2">{{.heading}}</h2>
             <p>{{.text}}</p>
           </div>
-          {{ if .image }}
-            {{ partial "progressive-image.html" (dict "context" . "src" .image "alt" .heading ) }}
-          {{ end }}
+          {{ if .image }}<img src="{{ .image }}" alt="{{ .heading }}">{{ end }}
         </div>
         {{ if .link_text }}<a href="{{ .link_url }}" class="btn raise mt3">{{ .link_text }}</a>{{ end }}
       </div>

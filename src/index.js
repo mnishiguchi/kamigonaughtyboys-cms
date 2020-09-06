@@ -1,5 +1,6 @@
 // JS Goes here - ES6 supported
 
+import 'progressive-image/progressive-image.js';
 import './css/main.scss';
 
 // Format all the date in Japanese format.
@@ -11,7 +12,7 @@ import './css/main.scss';
 //
 document.addEventListener('DOMContentLoaded', (e) => {
   Array.from(document.getElementsByTagName('time')).forEach((t) => {
-    const value = t.getAttribute('datetime')
+    const value = t.getAttribute('datetime');
     t.innerHTML = new Date(value).toLocaleDateString('ja', {
       weekday: 'short',
       year: 'numeric',

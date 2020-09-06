@@ -18,6 +18,7 @@ module.exports = {
   resolve: {
     alias: {
       'tachyons': path.resolve(__dirname, './node_modules/tachyons'),
+      'progressive-image': path.resolve(__dirname, './node_modules/progressive-image.js/dist'),
     }
   },
 

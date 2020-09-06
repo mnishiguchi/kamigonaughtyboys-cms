@@ -6,6 +6,7 @@
 @import './buttons';
 @import './svg';
 @import './cms';
+@import '~progressive-image/progressive-image';
 
 /* Importing here will allow you to override any variables in the modules */
 @import './variables';
@@ -41,4 +42,9 @@ main {
   & ul a[aria-current='true'] {
     box-shadow: inset 0 -4px 0 var(--primary);
   }
+}
+
+// Progressive image's preview needs to be 100% wide in case JS is disabled.
+img.preview {
+  width: 100%;
 }

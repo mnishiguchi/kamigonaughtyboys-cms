@@ -38,3 +38,7 @@ recent_posts_number = 5
     name = "リンク"
     url = "/links/"
     weight = 9
+
+# https://gohugo.io/content-management/image-processing/
+[imaging]
+quality = 100

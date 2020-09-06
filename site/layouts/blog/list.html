@@ -1,20 +1,16 @@
 {{ define "main" }}
 
-<main>
-  <div class="mw6 center ph3 pt4">
-    <h1 class="f2 lh-title mb3">記事</h1>
-    <div class="cms mw6">{{ .Content }}</div>
-  </div>
+<main class="mw7 center pv4 ph3">
+  <h1 class="f2 lh-title mb3">記事</h1>
+  <div class="cms mw6">{{ .Content }}</div>
 
-  <div class="mw7 center">
-    <ul class="flex-ns flex-wrap mhn1-ns pa3">
-      {{ range (.Paginator 6).Pages.ByPublishDate.Reverse }}
-        <div class="w-50-ns ph1-ns flex">{{ .Render "li"}}</div>
-      {{ end }}
-    </ul>
+  <ul class="flex-ns flex-wrap mhn1-ns pv3">
+    {{ range (.Paginator 6).Pages.ByPublishDate.Reverse }}
+      <div class="w-50-ns ph1-ns flex">{{ .Render "li"}}</div>
+    {{ end }}
+  </ul>
 
-    {{ partial "pagination" . }}
-  </div>
+  {{ partial "pagination" . }}
 </main>
 
 {{ end }}

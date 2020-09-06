@@ -22,11 +22,11 @@ main {
 /*
   We want to secure height for image so we can avoid text content jumping around while image is loading.
   desktop: 1056x792
-  mobile:  ~400x~300
+  mobile:  ~360x~270
  */
 .mn-ProgressiveImage {
   display: block;
-  min-height: 300px;
+  min-height: 270px;
 }
 
 /* Used in the navbar */

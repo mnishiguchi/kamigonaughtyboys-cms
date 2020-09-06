@@ -18,7 +18,7 @@
 
 {{ $original := $headless_bundle.Resources.GetMatch (strings.TrimPrefix "/images/" .src) }}
 
-<picture class="mn-ProgressiveImage">
+<picture class="mn-ProgressiveImage db">
   {{ if $original }}
     {{ $cropped := $original.Fill "600x450 Gaussian Center" }}{{/* Aspect ratio 4:3 */}}
     {{ $small := $cropped.Resize "20x" }}
